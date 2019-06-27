@@ -53,5 +53,5 @@ export const legacyRNElementsColors = {
     searchBg: "#303337",
     disabled: "#dadee0",
     white: "#ffffff",
-    error: "#ff190c",
+    error: "#ff190f",
 };

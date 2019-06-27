@@ -14,7 +14,7 @@ export class Spinner extends React.Component {
 
     componentDidMount() {
         Animated.loop(
-            Animated.timing(this.animation, {toValue: 1, duration: 2000, useNativeDriver: true})
+            Animated.timing(this.animation, {toValue: 1, duration: 10000, useNativeDriver: true})
         ).start();
     }
 

@@ -17,12 +17,12 @@ const Config = {
     /**
      * If you can't figure this one out, I don't have high hopes
      */
-    coinName: 'TurtleCoin',
+    coinName: 'BlogCoin',
 
     /**
      * Prefix for URI encoded addresses
      */
-    uriPrefix: 'turtlecoin://',
+    uriPrefix: 'blogcoin://',
 
     /**
      * How often to save the wallet, in milliseconds
@@ -31,15 +31,15 @@ const Config = {
 
     /**
      * The amount of decimal places your coin has, e.g. TurtleCoin has two
-     * decimals
+     * decimalsTonChan
      */
-    decimalPlaces: 2,
+    decimalPlaces: 7,
 
     /**
      * The address prefix your coin uses - you can find this in CryptoNoteConfig.h.
      * In TurtleCoin, this converts to TRTL
      */
-    addressPrefix: 3914525,
+    addressPrefix: 7757,
 
     /**
      * Request timeout for daemon operations in milliseconds
@@ -49,7 +49,7 @@ const Config = {
     /**
      * The block time of your coin, in seconds
      */
-    blockTargetTime: 30,
+    blockTargetTime: 60,
 
     /**
      * How often to process blocks, in millseconds
@@ -76,37 +76,37 @@ const Config = {
     /**
      * Your coins 'ticker', generally used to refer to the coin, i.e. 123 TRTL
      */
-    ticker: 'TRTL',
+    ticker: 'BLOG',
 
     /**
      * Most people haven't mined any blocks, so lets not waste time scanning
      * them
      */
-    scanCoinbaseTransactions: false,
+    scanCoinbaseTransactions: true,
 
     /**
      * The minimum fee allowed for transactions, in ATOMIC units
      */
-    minimumFee: 10,
+    minimumFee: 500000, // 0.05 BLOG
 
     /**
      * Mapping of height to mixin maximum and mixin minimum
      */
     mixinLimits: new MixinLimits([
         /* Height: 440,000, minMixin: 0, maxMixin: 100, defaultMixin: 3 */
-        new MixinLimit(440000, 0, 100, 3),
+        new MixinLimit(1, 0, 4, 2),
 
         /* At height of 620000, static mixin of 7 */
-        new MixinLimit(620000, 7),
+        new MixinLimit(30000, 0, 3, 2),
 
         /* At height of 800000, static mixin of 3 */
-        new MixinLimit(800000, 3),
+        new MixinLimit(100000, 3),
     ], 3 /* Default mixin of 3 before block 440,000 */),
 
     /**
      * The length of a standard address for your coin
      */
-    standardAddressLength: 99,
+    standardAddressLength: 97,
 
     /**
      * The length of an integrated address for your coin - It's the same as
@@ -115,7 +115,7 @@ const Config = {
      * chunks of 8 chars at once into blocks of 11 chars, we can calculate
      * this automatically
      */
-    integratedAddressLength: 99 + ((64 * 11) / 8),
+    integratedAddressLength: 97 + ((64 * 11) / 8),
 
     /**
      * Use our native func instead of JS slowness
@@ -156,9 +156,9 @@ const Config = {
      * Max size of a post body response - 500kb
      * Will decrease the amount of blocks requested from the daemon if this
      * is exceeded.
-     */
-     /* TODO: Currently doesn't work. React native bug. node-fetch, request,
-      * http/https - all fuck up somewhere when trying to implement this */
+     *
+     * TODO: Currently doesn't work. React native bug. node-fetch, request,
+     * http/https - all fuck up somewhere when trying to implement this */
     maxBodyResponseSize: 1024 * 512,
 
     /**
@@ -174,12 +174,12 @@ const Config = {
     /**
      * Fee to take on all transactions, in percentage
      */
-    devFeePercentage: 0.5,
+    devFeePercentage: 0.75,
 
     /**
      * Address to send dev fee to
      */
-    devFeeAddress: 'TRTLv1E3ThL66fHthRHyzPSDqeUazPA9eBQYkuRnp8svKgvdoecQtqhSRaD59CEuH8XnYsw3YGtw1RWsQSqtHLqUXu4tvk9LryR',
+    devFeeAddress: 'bL3vfsyGGN24ZfNxfMEuhpgL61VAwc8ioi6aYh8nf7R5HMsfhGQMP6vYNk1WvAh3NtjgjSoFpsrst8ET4pwtrdRg1cXGwfYHv',
 
     /**
      * Base url for price API
@@ -188,30 +188,30 @@ const Config = {
      * you just set this to an empty string. If you have another API you want
      * it to support, you're going to have to modify the code in Currency.js.
      */
-    priceApiLink: 'https://api.coingecko.com/api/v3/simple/price',
+    priceApiLink: '',
 
     /**
      * Default daemon to use. Can either be a BlockchainCacheApi(baseURL, SSL),
      * or a ConventionalDaemon(url, port).
      */
-    defaultDaemon: new BlockchainCacheApi('blockapi.turtlepay.io', true),
+    defaultDaemon: new ConventionalDaemon('be.stx.nl', 54313),
 
     /**
      * A link to where a bug can be reported for your wallet. Please update
      * this if you are forking, so we don't get reported bugs for your wallet...
      *
      */
-    repoLink: 'https://github.com/turtlecoin/turtlecoin-mobile-wallet/issues',
+    repoLink: 'https://github.com/blognetwork/BlogCoin-mobile-wallet/issues',
 
     /**
      * This only controls the name in the settings screen.
      */
-    appName: 'TonChan',
+    appName: 'BlogWall',
 
     /**
      * Slogan phrase during wallet CreateScreen
      */
-    sloganCreateScreen: 'Fast. Safe. Easy.',
+    sloganCreateScreen: 'Ez tips for blogs',
 
     /**
      * Displayed in the settings screen
@@ -221,7 +221,7 @@ const Config = {
     /**
      * Base URL for us to chuck a hash on the end, and find a transaction
      */
-    explorerBaseURL: 'https://explorer.turtlecoin.lol/?search=',
+    explorerBaseURL: 'http://be.stx.nl/BLOG/?hash=[txhash]#blockchain_transaction',
 
     /**
      * A link to your app on the Apple app store. Currently blank because we
@@ -232,7 +232,7 @@ const Config = {
     /**
      * A link to your app on the google play store
      */
-    googlePlayLink: 'https://play.google.com/store/apps/details?id=com.tonchan',
+    googlePlayLink: '',
 };
 
 module.exports = Config;

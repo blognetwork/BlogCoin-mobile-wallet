@@ -23,7 +23,7 @@ export function reportCaughtException(err) {
 export function initSentry() {
     if (sentryIsEnabled) {
         /* CHANGE THIS IF YOU ARE FORKING! */
-        Sentry.config('https://8ecf138e1d1e4d558178be3f2b5e1925@sentry.io/1411753').install();
+        Sentry.config('https://19657095cd9147f8a8d192dabd17b56a@sentry.io/1487704').install();
         Sentry.setVersion(Config.appVersion);
     }
 }

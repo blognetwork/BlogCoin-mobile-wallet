@@ -12,7 +12,7 @@ export const Themes = {
         /**
          * The primary colour used by the wallet, for TurtleCoin this is green
          */
-        primaryColour: '#40C18E',
+        primaryColour: '#cda843',
 
         /**
          * Colour for the background circles on the pin page
@@ -28,13 +28,13 @@ export const Themes = {
         /**
          * We chose to use a darker green here. It is very rarely used.
          */
-        secondaryColour: '#00853D',
+        secondaryColour: '#dfb954',
 
         /**
          * Terrible name, lol. This is used things which shouldn't pop out
          * much, like the 'TOTAL BALANCE' text.
          */
-        notVeryVisibleColour: 'lightgray',
+        notVeryVisibleColour: '#a1a1a1',
 
         /**
          * This is used for the same sort of things as notVeryVisibleColour,
@@ -75,12 +75,12 @@ export const Themes = {
         /**
          * Background colour for every component
          */
-        backgroundColour: '#2C2F33',
+        backgroundColour: '#1b1e22',
 
         /**
          * The primary colour used by the wallet, for TurtleCoin this is green
          */
-        primaryColour: '#40C18E',
+        primaryColour: '#cda843',
 
         /**
          * Colour for the background circles on the pin page
@@ -96,7 +96,7 @@ export const Themes = {
         /**
          * We chose to use a darker green here. It is very rarely used.
          */
-        secondaryColour: '#00853D',
+        secondaryColour: '#bc9732',
 
         /**
          * Terrible name, lol. This is used things which shouldn't pop out

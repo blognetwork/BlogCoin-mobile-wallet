@@ -1,4 +1,4 @@
-# TonChan - A mobile, native TurtleCoin wallet
+# BlogWall - A mobile, native BlogCoin wallet
 
 ![Screenshot](https://i.imgur.com/F5LMYKl.png)
 
@@ -8,7 +8,7 @@ Note: Make sure you use yarn instead of npm. Since there is no package-lock.json
 
 * Clone the repo:
 
-`git clone https://github.com/turtlecoin/turtlecoin-mobile-wallet.git`
+`git clone https://github.com/blognetwork/blogcoin-mobile-wallet.git`
 
 `cd turtlecoin-mobile-wallet`
 
@@ -69,23 +69,23 @@ If you need to update the native code, you may find this article helpful: https:
 To get the updated class signatures, rebuild the Java code (i.e., run `react-native run-android`, then run 
 
 ```
-javap -classpath android/app/build/intermediates/classes/debug/ -s com.tonchan.ClassName
+javap -classpath android/app/build/intermediates/classes/debug/ -s com.blogwall.ClassName
 ```
 
 Where `ClassName` is the class you want to query. For example, to get the signatures for `WalletBlockInfo`:
 
 ```
-javap -classpath android/app/build/intermediates/classes/debug/ -s com.tonchan.WalletBlockInfo
+javap -classpath android/app/build/intermediates/classes/debug/ -s com.blogwall.WalletBlockInfo
 ```
 
 Then the constructor signature is this section:
 
 ```
-public com.tonchan.WalletBlockInfo(com.tonchan.RawTransaction, com.tonchan.RawTransaction[]);
-    Signature: (Lcom/tonchan/RawTransaction;[Lcom/tonchan/RawTransaction;)V
+public com.blogwall.WalletBlockInfo(com.blogwall.RawTransaction, com.blogwall.RawTransaction[]);
+    Signature: (Lcom/blogwall/RawTransaction;[Lcom/blogwall/RawTransaction;)V
 ```
 
-Specifically, `(Lcom/tonchan/RawTransaction;[Lcom/tonchan/RawTransaction;)V`
+Specifically, `(Lcom/blogwall/RawTransaction;[Lcom/blogwall/RawTransaction;)V`
 
 ### Flowcharts
 
@@ -103,7 +103,7 @@ You need to bump the version number in:
 
 ### Integrating QR Codes or URIs
 
-TonChan supports two kinds of QR codes.
+blogwall supports two kinds of QR codes.
 
 * Standard addresses / integrated addresses - This is simply the address encoded as a QR code.
 
@@ -159,7 +159,7 @@ Run `npm install -g yo generator-rn-toolbox` (You may need to run this with sudo
 
 Run `yo rn-toolbox:assets --icon assets/img/icon.png --force`
 
-When it asks for the name of your react-native project, enter `TonChan`
+When it asks for the name of your react-native project, enter `blogwall`
 
 #### Renaming app
 
